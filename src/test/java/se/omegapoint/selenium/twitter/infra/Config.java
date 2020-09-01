@@ -13,10 +13,7 @@ public class Config {
         BASE64_DECODE_PASSWORD("base64decodePassword"),
         USERNAME("username"),
         PASSWORD("password"),
-        BROWSER("browser"),
-        BROWSER_CHROME_DRIVER_PATH("browserChromeDriverPath"),
-        BROWSER_FIREFOX_DRIVER_PATH("browserFirefoxDriverPath");
-
+        BROWSER("browser");
 
         private final String name;
         Value( String name ){

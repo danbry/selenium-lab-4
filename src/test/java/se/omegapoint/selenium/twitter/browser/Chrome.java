@@ -15,7 +15,6 @@ public class Chrome implements BrowserDriver {
     {
         WebDriverManager.chromedriver().setup();
 
-        //System.setProperty("webdriver.chrome.driver", Config.getStringValue(Config.Value.BROWSER_CHROME_DRIVER_PATH));
         return new ChromeDriver();
     }
 }

@@ -13,7 +13,6 @@ public class ChromeHeadless implements BrowserDriver {
     public WebDriver getDriverInstance()
     {
         WebDriverManager.chromedriver().setup();
-        //System.setProperty("webdriver.chrome.driver", Config.getStringValue(Config.Value.BROWSER_CHROME_DRIVER_PATH));
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setHeadless(true);
 

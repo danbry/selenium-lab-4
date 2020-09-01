@@ -8,7 +8,7 @@ import org.openqa.selenium.safari.SafariDriver;
 import java.lang.reflect.InvocationTargetException;
 
 /**
- * The Safari browser
+ * The Safari browser - not working yet
  */
 public class Safari implements BrowserDriver {
     public WebDriver getDriverInstance() {
@@ -34,8 +34,6 @@ public class Safari implements BrowserDriver {
             e.printStackTrace();
         }
         return null;
-
-        //System.setProperty("webdriver.safari.driver", Config.getStringValue(Config.Value.BROWSER_FIREFOX_DRIVER_PATH));
 
        //return new SafariDriver();
     }

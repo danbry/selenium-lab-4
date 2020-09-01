@@ -11,11 +11,6 @@ import se.omegapoint.selenium.twitter.infra.Config;
 public class Firefox implements BrowserDriver {
     public WebDriver getDriverInstance() {
         WebDriverManager.firefoxdriver().setup();
-
-        //System.setProperty("webdriver.gecko.driver", Config.getStringValue(Config.Value.BROWSER_FIREFOX_DRIVER_PATH));
-        //DesiredCapabilities legacyCapabilities = DesiredCapabilities.firefox();
-        //legacyCapabilities.setCapability("marionette", true);
-        //return new FirefoxDriver(legacyCapabilities);
         return new FirefoxDriver();
     }
 }

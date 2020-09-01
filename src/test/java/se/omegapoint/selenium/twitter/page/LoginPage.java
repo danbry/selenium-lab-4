@@ -17,7 +17,6 @@ public class LoginPage {
     private final By signinEmailInput = By.name("session[username_or_email]");
     private final By signinPasswordInput = By.name("session[password]");
     private final By loginButton = By.cssSelector("#react-root div[role=button]");
-    private static final String INCORRECT_LOGIN_TITLE = "Login on Twitter";
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -25,10 +24,6 @@ public class LoginPage {
 
     public void goToPage() {
         driver.get(baseUrl + "/login");
-    }
-
-    public boolean isOnIncorrectLoginPage() {
-        return INCORRECT_LOGIN_TITLE.equalsIgnoreCase(driver.getTitle());
     }
 
     public void doLogin(String userEmail, String password, Boolean base64DecodePassword) {
