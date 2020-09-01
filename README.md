@@ -1,4 +1,4 @@
-# Selenium Lab version 4
+# Selenium 4 Lab
 
 ## Setup
 The following steps needs to be performed to run the tests
