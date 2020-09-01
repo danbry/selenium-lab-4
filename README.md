@@ -1,4 +1,5 @@
 #Selenium Lab version 4
+
 ## Setup
 The following steps needs to be performed to run the tests
 * Install Java 11
