@@ -23,23 +23,21 @@ public class ProfileTest extends BaseTest {
         //Perform login
         loginPage.doLoginWithConfiguredUsernameAndPassword();
 
-        MainPage mainPage = new MainPage(driver);
         //Verify that we are on the main page
+        MainPage mainPage = new MainPage(driver);
         assertTrue(mainPage.isOnMainPage(), "Not on main page");
 
-        //Get number of tweets
-        //int numberOfTweetsOnMainPage = mainPage.getCurrentNumberOfTweets();
-
+        //Go to profile page
         mainPage.clickProfileButton();
 
-        //Go to profile page
+        //Verify that we are on the profile page
         ProfilePage profilePage = new ProfilePage(driver);
-        //profilePage.goToPageForConfiguredUsername();
+        assertTrue(profilePage.isOnPage());
 
+        //Verify that the number of tweets are more than zero
         int numberOfTweetsOnProfilePage = profilePage.getCurrentNumberOfTweets();
+        assertTrue(numberOfTweetsOnProfilePage > 0);
 
-        System.out.println(numberOfTweetsOnProfilePage);
 
-        //assertEquals(numberOfTweetsOnMainPage, numberOfTweetsOnProfilePage, "Expect number of tweets to be the same on main page and profile page");
     }
 }

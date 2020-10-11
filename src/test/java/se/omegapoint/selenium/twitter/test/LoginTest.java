@@ -18,16 +18,16 @@ public class LoginTest extends BaseTest {
     */
     @Test
     public void correctLogin() {
-        LoginPage loginPage = new LoginPage(driver);
 
         //Go to login page
+        LoginPage loginPage = new LoginPage(driver);
         loginPage.goToPage();
 
         //Perform login
         loginPage.doLoginWithConfiguredUsernameAndPassword();
 
-        MainPage mainPage = new MainPage(driver);
         //Verify that we are on the main page
+        MainPage mainPage = new MainPage(driver);
         assertTrue(mainPage.isOnMainPage(), "Not on main page");
     }
 
@@ -37,16 +37,16 @@ public class LoginTest extends BaseTest {
      */
     @Test
     public void incorrectLogin() {
-        LoginPage loginPage = new LoginPage(driver);
 
         //Go to login page
+        LoginPage loginPage = new LoginPage(driver);
         loginPage.goToPage();
 
         //Perform incorrect login
         loginPage.doLogin("InvalidUsername", "bogus", false);
 
-        MainPage mainPage = new MainPage(driver);
         //Checks that the login was incorrect -> not on main page
+        MainPage mainPage = new MainPage(driver);
         assertFalse(mainPage.isOnMainPage(), "Should not be logged in");
     }
 }

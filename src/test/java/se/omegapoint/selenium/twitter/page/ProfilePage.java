@@ -1,6 +1,7 @@
 package se.omegapoint.selenium.twitter.page;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -26,6 +27,15 @@ public class ProfilePage {
     }
 
     public void goToPageForConfiguredUsername() { goToPage(Config.getStringValue(Config.Value.USERNAME)); }
+
+    public boolean isOnPage() {
+        try {
+            WebElement element = driver.findElement(numberOfTweets);
+            return element.isDisplayed();
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
 
     public int getCurrentNumberOfTweets() {
         List<WebElement> elements = driver.findElements(numberOfTweets);

@@ -21,7 +21,6 @@ public abstract class BaseTest {
     }
 
     protected void refreshPage() {
-        //driver.navigate().to(driver.getCurrentUrl());
         driver.navigate().refresh();
         isAlertPresentThenAccept();
     }

@@ -25,29 +25,28 @@ public class TweetTest extends BaseTest {
           fail("Since this is an updating test it will only run with a test Twitter account");
       }
 
-      LoginPage loginPage = new LoginPage(driver);
-
       //Go to login page
+      LoginPage loginPage = new LoginPage(driver);
       loginPage.goToPage();
 
       //Perform login
       loginPage.doLoginWithConfiguredUsernameAndPassword();
 
-      MainPage mainPage = new MainPage(driver);
       //Verify that we are on the main page
+      MainPage mainPage = new MainPage(driver);
       assertTrue(mainPage.isOnMainPage(), "Not on main page");
 
+      //Go to profile page
       mainPage.clickProfileButton();
 
-      //Go to profile page
+      //Verify that we are on the profile page
       ProfilePage profilePage = new ProfilePage(driver);
-      //profilePage.goToPageForConfiguredUsername();
+      assertTrue(profilePage.isOnPage(), "Not on profile page");
 
       //Get number of tweets before new tweet
       int numberOfTweetsBeforeNewTweet = profilePage.getCurrentNumberOfTweets();
 
-
-      //Check that the tweet modal is open
+      //Open the tweet modal
       TweetModal tweetModal = new TweetModal(driver);
       tweetModal.openModal();
       assertTrue(tweetModal.isOnTweetModal(), "Expect to have tweet modal");
@@ -72,16 +71,16 @@ public class TweetTest extends BaseTest {
    */
   @Test
   public void tweetWithTooManyCharacters() {
-      LoginPage loginPage = new LoginPage(driver);
 
       //Go to login page
+      LoginPage loginPage = new LoginPage(driver);
       loginPage.goToPage();
 
       //Perform login
       loginPage.doLoginWithConfiguredUsernameAndPassword();
 
-      MainPage mainPage = new MainPage(driver);
       //Verify that we are on the main page
+      MainPage mainPage = new MainPage(driver);
       assertTrue(mainPage.isOnMainPage(), "Not on main page");
 
       //Check that the tweet modal is open
