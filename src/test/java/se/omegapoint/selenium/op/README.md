@@ -1,1 +1,0 @@
-WebDriverManager.chromedriver().setup();
