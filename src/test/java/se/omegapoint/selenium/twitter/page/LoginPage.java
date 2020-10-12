@@ -2,7 +2,7 @@ package se.omegapoint.selenium.twitter.page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import se.omegapoint.selenium.twitter.infra.Config;
+import se.omegapoint.selenium.infra.Config;
 
 import java.util.Base64;
 

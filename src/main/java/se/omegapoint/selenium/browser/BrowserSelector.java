@@ -1,6 +1,6 @@
-package se.omegapoint.selenium.twitter.browser;
+package se.omegapoint.selenium.browser;
 
-import se.omegapoint.selenium.twitter.infra.Config;
+import se.omegapoint.selenium.infra.Config;
 
 /**
  * Util to select the configured browser

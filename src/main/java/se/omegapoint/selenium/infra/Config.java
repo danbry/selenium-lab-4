@@ -1,4 +1,4 @@
-package se.omegapoint.selenium.twitter.infra;
+package se.omegapoint.selenium.infra;
 
 import java.io.IOException;
 import java.util.Properties;

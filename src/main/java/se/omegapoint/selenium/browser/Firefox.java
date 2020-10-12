@@ -1,9 +1,8 @@
-package se.omegapoint.selenium.twitter.browser;
+package se.omegapoint.selenium.browser;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import se.omegapoint.selenium.twitter.infra.Config;
 
 /**
  * The Firefox browser

@@ -1,9 +1,8 @@
-package se.omegapoint.selenium.twitter.browser;
+package se.omegapoint.selenium.browser;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.bonigarcia.wdm.config.DriverManagerType;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.safari.SafariDriver;
 
 import java.lang.reflect.InvocationTargetException;
 

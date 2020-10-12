@@ -1,8 +1,8 @@
-package se.omegapoint.selenium.twitter.test;
+package se.omegapoint.selenium.twitter;
 
 import com.google.common.base.Strings;
 import org.junit.jupiter.api.Test;
-import se.omegapoint.selenium.twitter.infra.Config;
+import se.omegapoint.selenium.infra.Config;
 import se.omegapoint.selenium.twitter.page.LoginPage;
 import se.omegapoint.selenium.twitter.page.MainPage;
 import se.omegapoint.selenium.twitter.page.ProfilePage;

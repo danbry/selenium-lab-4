@@ -1,11 +1,11 @@
-package se.omegapoint.selenium.twitter.test;
+package se.omegapoint.selenium.twitter;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
-import se.omegapoint.selenium.twitter.browser.BrowserDriver;
-import se.omegapoint.selenium.twitter.browser.BrowserSelector;
+import se.omegapoint.selenium.browser.BrowserDriver;
+import se.omegapoint.selenium.browser.BrowserSelector;
 
 import java.util.concurrent.TimeUnit;
 

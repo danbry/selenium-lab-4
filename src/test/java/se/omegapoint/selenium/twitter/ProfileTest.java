@@ -1,4 +1,4 @@
-package se.omegapoint.selenium.twitter.test;
+package se.omegapoint.selenium.twitter;
 
 import org.junit.jupiter.api.Test;
 import se.omegapoint.selenium.twitter.page.LoginPage;

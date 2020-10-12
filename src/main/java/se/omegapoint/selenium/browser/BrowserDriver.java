@@ -1,4 +1,4 @@
-package se.omegapoint.selenium.twitter.browser;
+package se.omegapoint.selenium.browser;
 
 import org.openqa.selenium.WebDriver;
 

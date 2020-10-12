@@ -1,11 +1,8 @@
-package se.omegapoint.selenium.twitter.browser;
+package se.omegapoint.selenium.browser;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import se.omegapoint.selenium.twitter.infra.Config;
-
-import java.sql.Driver;
 
 /**
  * The Chrome browser
