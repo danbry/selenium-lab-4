@@ -7,7 +7,11 @@ import org.openqa.selenium.WebDriver;
 import se.omegapoint.selenium.browser.BrowserDriver;
 import se.omegapoint.selenium.browser.BrowserSelector;
 
+import java.time.Duration;
+import java.time.temporal.TemporalUnit;
 import java.util.concurrent.TimeUnit;
+
+import static java.time.temporal.ChronoUnit.SECONDS;
 
 /**
  * The base test setting up and tearing down the specified WebDriver.
@@ -37,7 +41,7 @@ public abstract class BaseTest {
     @BeforeEach
     public void setUp() {
         driver = getBrowser().getDriverInstance();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.of(5, SECONDS));
         driver.manage().window().fullscreen();
     }
 

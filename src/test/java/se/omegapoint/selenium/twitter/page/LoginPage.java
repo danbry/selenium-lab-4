@@ -14,7 +14,7 @@ public class LoginPage {
     private final WebDriver driver;
 
     // Elements on page
-    private final By signinEmailInput = By.name("session[username_or_email]");
+    private final By signinEmailInput = By.cssSelector("[name='session[username_or_email]'][type='text']");
     private final By signinPasswordInput = By.name("session[password]");
     private final By loginButton = By.cssSelector("#react-root div[role=button]");
 
@@ -37,7 +37,7 @@ public class LoginPage {
         driver.findElement(signinPasswordInput).sendKeys(password);
 
         //Click on login button
-        driver.findElements(loginButton).get(1).click();
+        driver.findElements(loginButton).get(0).click();
     }
 
     public void doLoginWithConfiguredUsernameAndPassword() {
