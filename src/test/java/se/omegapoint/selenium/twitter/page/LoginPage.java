@@ -16,7 +16,7 @@ public class LoginPage {
     // Elements on page
     private final By signinEmailInput = By.cssSelector("[name='session[username_or_email]'][type='text']");
     private final By signinPasswordInput = By.name("session[password]");
-    private final By loginButton = By.cssSelector("#react-root div[role=button]");
+    private final By loginButton = By.cssSelector("#react-root div[role=button][data-testid='LoginForm_Login_Button']");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
