@@ -3,37 +3,26 @@ package se.omegapoint.selenium.browser;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.bonigarcia.wdm.config.DriverManagerType;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.safari.SafariOptions;
 
 import java.lang.reflect.InvocationTargetException;
 
 /**
- * The Safari browser - not working yet
+ * The Safari browser - not working yet with insecure certs..
  */
 public class Safari implements BrowserDriver {
     public WebDriver getDriverInstance() {
-
         DriverManagerType safari = DriverManagerType.SAFARI;
         WebDriverManager.getInstance(safari).setup();
 
-        Class<?> safariClass = null;
-        try {
-            safariClass = Class.forName(safari.browserClass());
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        try {
-            return (WebDriver) safariClass.getDeclaredConstructor().newInstance();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        }
-        return null;
+        //The Safari driver does not allow "Accept Insecure Certs"
+        /*
+        SafariOptions options = new SafariOptions();
+        options.setAcceptInsecureCerts(true);
+        return new SafariDriver(options);
+         */
 
-       //return new SafariDriver();
+        return new SafariDriver();
     }
 }

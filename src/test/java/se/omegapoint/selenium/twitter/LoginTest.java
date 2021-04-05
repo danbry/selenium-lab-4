@@ -1,8 +1,13 @@
 package se.omegapoint.selenium.twitter;
 
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.io.FileHandler;
 import se.omegapoint.selenium.twitter.page.LoginPage;
 import se.omegapoint.selenium.twitter.page.MainPage;
+
+import java.io.File;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -19,16 +24,21 @@ public class LoginTest extends BaseTest {
     @Test
     public void correctLogin() {
 
-        //Go to login page
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.goToPage();
+        try {
+            //Go to login page
+            LoginPage loginPage = new LoginPage(driver);
+            loginPage.goToPage();
 
-        //Perform login
-        loginPage.doLoginWithConfiguredUsernameAndPassword();
+            //Perform login
+            loginPage.doLoginWithConfiguredUsernameAndPassword();
 
-        //Verify that we are on the main page
-        MainPage mainPage = new MainPage(driver);
-        assertTrue(mainPage.isOnMainPage(), "Not on main page");
+            //Verify that we are on the main page
+            MainPage mainPage = new MainPage(driver);
+            assertTrue(mainPage.isOnMainPage(), "Not on main page");
+        } catch (Exception e) {
+            takeFullScreenShot("correct_login_error.png");
+            throw e;
+        }
     }
 
 
