@@ -16,7 +16,7 @@ public class TweetModal {
     private final WebDriver driver;
 
     private final By tweetButton = By.cssSelector("div[data-testid=tweetButton]");
-    private final By tweetButtonDisabled = By.cssSelector("div[data-testid=tweetButton][disabled]");
+    private final By tweetButtonDisabled = By.cssSelector("div[data-testid=tweetButton][aria-disabled=true]");
     private final By tweetTextBox = By.cssSelector("div[aria-label=\"Tweet text\"]");
 
 
