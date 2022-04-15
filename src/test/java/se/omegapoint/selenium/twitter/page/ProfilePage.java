@@ -4,8 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import se.omegapoint.selenium.infra.Config;
 
+import java.time.Duration;
 import java.util.List;
 
 /**
@@ -27,6 +30,9 @@ public class ProfilePage {
     public void goToPageForConfiguredUsername() { goToPage(Config.getStringValue(Config.Value.USERNAME)); }
 
     public boolean isOnPage() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(numberOfTweets));
+
         try {
             WebElement element = driver.findElement(numberOfTweets);
             return element.isDisplayed();

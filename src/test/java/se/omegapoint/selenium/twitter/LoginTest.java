@@ -1,9 +1,6 @@
 package se.omegapoint.selenium.twitter;
 
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.io.FileHandler;
 import se.omegapoint.selenium.twitter.page.LoginPage;
 import se.omegapoint.selenium.twitter.page.MainPage;
 

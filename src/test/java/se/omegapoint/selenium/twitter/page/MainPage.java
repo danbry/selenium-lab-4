@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import se.omegapoint.selenium.infra.Config;
 
 import java.time.Duration;
 
@@ -17,10 +18,15 @@ public class MainPage {
 
     public static final String path = "/home";
 
-    private final By profileButton = By.cssSelector("#react-root a[aria-label=Profile]");
+    private final By profileButton = By.cssSelector("a[href='/" + Config.getStringValue(Config.Value.USERNAME) + "']");
+
+    private final By buttons = By.cssSelector("div[role=button]");
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
+        //Accept cookie settings.
+        //TODO: The accept cookie settings button should be identified better.
+        driver.findElements(buttons).get(0).click();
     }
 
     public boolean isOnMainPage() {
@@ -29,6 +35,6 @@ public class MainPage {
     }
 
     public void clickProfileButton() {
-        driver.findElement(profileButton).click();;
+        driver.findElement(profileButton).click();
     }
 }

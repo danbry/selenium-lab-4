@@ -14,8 +14,9 @@ public class LoginPage {
     private final WebDriver driver;
 
     // Elements on page
-    private final By signinEmailInput = By.cssSelector("[name='session[username_or_email]'][type='text']");
-    private final By signinPasswordInput = By.name("session[password]");
+    private final By signinEmailInput = By.cssSelector("[autocomplete='username'][type='text']");
+    private final By signinNextButton = By.cssSelector("div[role=button]");
+    private final By signinPasswordInput = By.name("password");
     private final By loginButton = By.cssSelector("#react-root div[role=button][data-testid='LoginForm_Login_Button']");
 
     public LoginPage(WebDriver driver) {
@@ -30,6 +31,8 @@ public class LoginPage {
         //Fill in user name
         driver.findElement(signinEmailInput).sendKeys(userEmail);
 
+        driver.findElements(signinNextButton).get(2).click();
+
         //Fill in password
         if (base64DecodePassword) {
             password = new String(Base64.getDecoder().decode(password));
@@ -38,6 +41,9 @@ public class LoginPage {
 
         //Click on login button
         driver.findElements(loginButton).get(0).click();
+
+        //Activate adapted ads
+        //driver.findElements(signinNextButton).get(2).click();
     }
 
     public void doLoginWithConfiguredUsernameAndPassword() {
