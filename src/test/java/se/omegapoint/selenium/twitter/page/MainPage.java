@@ -18,7 +18,7 @@ public class MainPage {
 
     public static final String path = "/home";
 
-    private final By profileButton = By.cssSelector("a[href='/" + Config.getStringValue(Config.Value.USERNAME) + "']");
+    private final By profileButton = By.cssSelector("a[href=\"/" + Config.getStringValue(Config.Value.USERNAME) + "\"]");
 
     private final By buttons = By.cssSelector("div[role=button]");
 

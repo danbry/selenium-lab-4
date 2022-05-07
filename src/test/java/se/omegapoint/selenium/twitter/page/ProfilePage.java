@@ -17,7 +17,7 @@ import java.util.List;
 public class ProfilePage {
 
     private final WebDriver driver;
-    private final By numberOfTweets = By.cssSelector("#react-root h2[role=heading] + div");
+    private final By numberOfTweets = By.cssSelector("#react-root h2[role=heading] + div[dir=auto][style=\"\"]");
 
     public ProfilePage(WebDriver driver) {
         this.driver = driver;
@@ -30,9 +30,7 @@ public class ProfilePage {
     public void goToPageForConfiguredUsername() { goToPage(Config.getStringValue(Config.Value.USERNAME)); }
 
     public boolean isOnPage() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(numberOfTweets));
-
+        driver.navigate().refresh();
         try {
             WebElement element = driver.findElement(numberOfTweets);
             return element.isDisplayed();
@@ -42,9 +40,9 @@ public class ProfilePage {
     }
 
     public int getCurrentNumberOfTweets() {
-        List<WebElement> elements = driver.findElements(numberOfTweets);
+        WebElement element = driver.findElement(numberOfTweets);
 
-        String tweets = elements.get(1).getText();  //269 Tweets
+        String tweets = element.getText();  //269 Tweets
         String[] splitTweetsString = tweets.split(" ");
         return Integer.parseInt(splitTweetsString[0]);
     }

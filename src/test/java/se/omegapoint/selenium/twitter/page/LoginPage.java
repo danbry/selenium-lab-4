@@ -2,8 +2,11 @@ package se.omegapoint.selenium.twitter.page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import se.omegapoint.selenium.infra.Config;
 
+import java.time.Duration;
 import java.util.Base64;
 
 /**
@@ -30,6 +33,9 @@ public class LoginPage {
     public void doLogin(String userEmail, String password, Boolean base64DecodePassword) {
         //Fill in user name
         driver.findElement(signinEmailInput).sendKeys(userEmail);
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.numberOfElementsToBe(signinNextButton, 4));
 
         driver.findElements(signinNextButton).get(2).click();
 
