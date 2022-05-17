@@ -34,6 +34,8 @@ public class SwedbankLoginPage {
     }
 
    public void acceptAllCookies() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(consentButton));
         driver.findElement(consentButton).click();
    }
 
