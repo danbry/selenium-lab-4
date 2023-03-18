@@ -3,6 +3,7 @@ package se.omegapoint.selenium.browser;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 /**
  * The Chrome browser
@@ -10,8 +11,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Chrome implements BrowserDriver {
     public WebDriver getDriverInstance()
     {
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
 
-        return new ChromeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--remote-allow-origins=*");
+
+        return new ChromeDriver(chromeOptions);
     }
 }

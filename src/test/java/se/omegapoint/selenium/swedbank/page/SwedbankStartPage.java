@@ -4,9 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.List;
 
 /**
- * Page object representing the login page for Swedbank demo.
+ * Page object representing the start page for Swedbank demo.
  */
 public class SwedbankStartPage {
 
@@ -14,11 +19,9 @@ public class SwedbankStartPage {
     private final WebDriver driver;
 
     // Elements on page
-    private final By welcomeHero = By.cssSelector("acorn-hero h1");
+    private final By welcomeHeroSelector = By.cssSelector("acorn-hero h1");
 
-    private final By initialLoginButton = By.cssSelector("acorn-button[data-test-id=initial-login-button");
-
-    private final By firstProfile = By.cssSelector("acorn-item[slot=item-0]");
+    private final By accountsSelector = By.cssSelector("fdp-widget-my-accounts acorn-item");
 
     private final String welcomeHeroTextSwedish = "Välkommen!";
 
@@ -30,9 +33,16 @@ public class SwedbankStartPage {
         driver.get(SwedbankLoginPage.baseUrl + pageUrl);
     }
 
+    public void goToAccountPage() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        List<WebElement> accounts = driver.findElements(accountsSelector);
+        wait.until(ExpectedConditions.visibilityOfAllElements(accounts));
+        accounts.get(2).click();
+    }
+
     public boolean isOnPage() {
         try {
-            WebElement element = driver.findElement(welcomeHero);
+            WebElement element = driver.findElement(welcomeHeroSelector);
             return welcomeHeroTextSwedish.equals(element.getText());
         } catch (NoSuchElementException e) {
             return false;

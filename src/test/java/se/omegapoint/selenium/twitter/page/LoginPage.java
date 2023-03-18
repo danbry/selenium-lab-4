@@ -13,7 +13,7 @@ import java.util.Base64;
  * Page object representing the login page for Twitter.
  */
 public class LoginPage {
-    static final String baseUrl = "https://www.twitter.com";
+    static final String baseUrl = "https://twitter.com";
     private final WebDriver driver;
 
     // Elements on page
@@ -27,7 +27,7 @@ public class LoginPage {
     }
 
     public void goToPage() {
-        driver.get(baseUrl + "/login");
+        driver.get(baseUrl + "/i/flow/login");
     }
 
     public void doLogin(String userEmail, String password, Boolean base64DecodePassword) {

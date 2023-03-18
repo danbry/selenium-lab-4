@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 /**
  * Page object representing the login page for Swedbank demo.
  */
@@ -23,7 +25,7 @@ public class SwedbankLoginPage {
 
     private final By initialLoginButton = By.cssSelector("acorn-button[data-test-id=initial-login-button");
 
-    private final By privateProfile = By.cssSelector("acorn-item[slot=item-0]");
+    private final By privateProfileSelector = By.cssSelector("acorn-item[tabIndex=\"0\"]");
 
     public SwedbankLoginPage(WebDriver driver) {
         this.driver = driver;
@@ -52,9 +54,8 @@ public class SwedbankLoginPage {
 
    public void selectPrivateProfile() {
        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-       wait.until(ExpectedConditions.elementToBeClickable(privateProfile));
-       driver.findElement(privateProfile).click();
+       wait.until(ExpectedConditions.elementToBeClickable(privateProfileSelector));
+       driver.findElement(privateProfileSelector).click();
    }
-
 }
 

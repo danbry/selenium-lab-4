@@ -16,9 +16,9 @@ import java.time.Duration;
 public class MainPage {
     private final WebDriver driver;
 
-    public static final String path = "/home";
+    public static final String path = "";
 
-    private final By profileButton = By.cssSelector("a[href=\"/" + Config.getStringValue(Config.Value.USERNAME) + "\"]");
+    private final By profileButton = By.cssSelector("a[aria-label=\"Profile\"]");
 
     private final By buttons = By.cssSelector("div[role=button]");
 
@@ -31,7 +31,7 @@ public class MainPage {
 
     public boolean isOnMainPage() {
         String  currentUrl = driver.getCurrentUrl();
-        return currentUrl.endsWith(path);
+        return currentUrl.equals(LoginPage.baseUrl + "/");
     }
 
     public void clickProfileButton() {

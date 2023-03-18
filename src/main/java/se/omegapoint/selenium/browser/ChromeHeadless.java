@@ -13,7 +13,8 @@ public class ChromeHeadless implements BrowserDriver {
     {
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setHeadless(true);
+        chromeOptions.addArguments("--headless=new");
+        chromeOptions.addArguments("--remote-allow-origins=*");
 
         return new ChromeDriver(chromeOptions);
     }

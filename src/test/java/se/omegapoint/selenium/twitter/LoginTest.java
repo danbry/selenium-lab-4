@@ -31,7 +31,7 @@ public class LoginTest extends BaseTest {
 
             //Verify that we are on the main page
             MainPage mainPage = new MainPage(driver);
-            assertTrue(mainPage.isOnMainPage(), "Not on main page");
+            assertTrue(mainPage.isOnMainPage(), "Not on main page " + driver.getCurrentUrl());
         } catch (Exception e) {
             takeFullScreenShot("correct_login_error.png");
             throw e;
