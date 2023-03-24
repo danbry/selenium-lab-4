@@ -8,8 +8,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 /**
  * Page object representing the login page for Swedbank demo.
  */
@@ -23,7 +21,7 @@ public class SwedbankLoginPage {
     // Elements on page
     private final By consentButton = By.cssSelector("acorn-button[data-test-id=acorn-button-accept-all-cookies]");
 
-    private final By initialLoginButton = By.cssSelector("acorn-button[data-test-id=initial-login-button");
+    private final By initialLoginButton = By.cssSelector("acorn-button[data-test-id=initial-login-button]");
 
     private final By privateProfileSelector = By.cssSelector("acorn-item[tabIndex=\"0\"]");
 

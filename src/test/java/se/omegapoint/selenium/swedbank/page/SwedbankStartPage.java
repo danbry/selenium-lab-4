@@ -35,13 +35,11 @@ public class SwedbankStartPage {
         driver.get(SwedbankLoginPage.baseUrl + pageUrl);
     }
 
-    public void goToAccountPage() throws InterruptedException {
+    public void goToAccountPage() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         List<WebElement> accounts = driver.findElements(accountsSelector);
         wait.until(ExpectedConditions.elementToBeClickable(accounts.get(2)));
-        //Make sure the link is clickable if the screen is too small to see the link
-        Actions actions = new Actions(driver);
-        actions.moveToElement(accounts.get(2)).click().build().perform();
+        accounts.get(2).click();
     }
 
     public boolean isOnPage() {

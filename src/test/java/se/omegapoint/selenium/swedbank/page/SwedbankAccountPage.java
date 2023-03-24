@@ -18,6 +18,6 @@ public class SwedbankAccountPage {
 
     public boolean isOnPage() {
         String header = driver.findElement(headerText).getText();
-        return "Sparkapitalkonto".equals(header);
+        return "Privatkonto".equals(header);
     }
 }
