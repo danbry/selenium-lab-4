@@ -5,6 +5,7 @@ import se.omegapoint.selenium.swedbank.page.SwedbankLoginPage;
 import se.omegapoint.selenium.swedbank.page.SwedbankStartPage;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 /**
  * Simple login tests to test the login page.
@@ -36,6 +37,7 @@ public class SwedbankLoginTest extends SwedbankBaseTest {
             assertTrue(startPage.isOnPage());
         } catch (Exception e) {
             takeFullScreenShot("swedbank_correct_login_error.png");
+            fail("Login test failed [" + e.toString() + "]");
         }
     }
 }

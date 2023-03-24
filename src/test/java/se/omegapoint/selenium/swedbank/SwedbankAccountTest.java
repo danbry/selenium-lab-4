@@ -6,6 +6,7 @@ import se.omegapoint.selenium.swedbank.page.SwedbankLoginPage;
 import se.omegapoint.selenium.swedbank.page.SwedbankStartPage;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class SwedbankAccountTest extends SwedbankBaseTest {
 
@@ -37,6 +38,7 @@ public class SwedbankAccountTest extends SwedbankBaseTest {
 
         } catch (Exception e) {
             takeFullScreenShot("swedbank_account_info_error.png");
+            fail("Account test failed [" + e.toString() + "]");
         }
     }
 }
